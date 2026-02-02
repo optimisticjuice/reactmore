@@ -8,7 +8,7 @@ const UpdateUser = () => {
     setName("John Doe");
     setAge(30);
   };
-
+ 
   return (
     <div>
       <h1>UpdateUser : {name}</h1>
