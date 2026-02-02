@@ -7,7 +7,24 @@ import FocusInput from "./component/FocusInput.jsx";
 export const ThemeContext = createContext();
 export const Theme2 = createContext();
 import Timer from "./component/Timer.jsx";
+import useFetch from "./component/useFetch.jsx";
+  
 function App(){
+  const [data] = useFetch("https://jsonplaceholder.typicode.com/posts");
+  
+  const FetchDataApi = () => {
+    return(
+    <section>
+      {data && data.slice(0,3).map((item) => (
+        <div key={item.id}>
+            <h2>{item.title}</h2>
+            <p>{item.body}</p>
+          </div>
+        ))
+      }
+      </section>
+    )
+  }
   return(
     <>
     <UserProvider/>
@@ -17,6 +34,7 @@ function App(){
     <FocusInput />
     <Ref/>
     <Timer/>
+    <FetchDataApi/>
     </>
   )
 }
