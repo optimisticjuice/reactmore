@@ -8,7 +8,7 @@ export const ThemeContext = createContext();
 export const Theme2 = createContext();
 import Timer from "./component/Timer.jsx";
 import useFetch from "./component/useFetch.jsx";
-  
+import UniqueId from "./component/UniqueId.jsx"; 
 function App(){
   const [data] = useFetch("https://jsonplaceholder.typicode.com/posts");
   
@@ -35,6 +35,7 @@ function App(){
     <Ref/>
     <Timer/>
     <FetchDataApi/>
+    <UniqueId />
     </>
   )
 }
